@@ -1,0 +1,164 @@
+<%- include('./partials/header.ejs')%>
+<%- include('./partials/usernav.ejs')%>
+
+    <input type="text" hidden id="admin_id" value="<%=data.id%>">
+    <div class="container-fluid wrapper">
+        <div class="org"></div>
+        <div class="loader">
+            <div class="loader-image">
+                <img src="/img/loader.gif" alt="">
+            </div>
+        </div>
+        <div class="payments">
+       
+    
+        <div class="container purchases">
+            <div class="payments-header">
+                <h3>Purchases</h3>
+              
+            </div>
+            <div class="payment-card" >
+                <ul class="header">
+                    <li >Ref Code</li>
+                    <li>Number</li>
+                    <li>Amount</li>
+                    <li>Time</li>
+                </ul>
+                <div class="data-card"id="trans-Card">
+                    
+                </div>
+    
+            </div>
+    
+        </div>
+    </div>
+    </div>
+    <div class="modal  mt-5" id="add-profile" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Add Profile</h5>
+            <button type="button" class="btn-close bg-white text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post">
+                    <div class="row mt-3">
+                        <div class="col">
+                            <input type="text" class="form-control" name="name" placeholder="Name" required >
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" name="type" placeholder="Type" required >
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <input type="number" class="form-control" name="amount" placeholder="Amount" required >
+                        </div>
+                        <div class="col">
+                            <input type="number" class="form-control" name="station" placeholder="Station" required >
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <input type="number" class="form-control" name="devices" placeholder="Devices" required >
+
+                        </div>
+                    </div>
+
+                    <div class="input-group mt-3 hover">
+                        <input type="submit" class="btn form-control bg-primary" value="Submit">
+                    </div>
+                </form>
+        
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="modal  mt-5" id="fixed-clients" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title text-dark" id="staticBackdropLabel">Fixed Clients</h5>
+            <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post" id="client-form-user">
+                    <div class="alert alert-danger alert-dismissible fade hide" id="client_error" role="alert">
+                        Something Went Wrong!
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div>
+                      <div class="alert alert-success alert-dismissible fade hide" id="client_success" role="alert">
+                        Profile added Successfuly
+                        <button  type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div>
+                <input type="text" class="form-control" hidden name="admin_id"  value=<%= data.id  %> >
+                    <div class="row mt-3">
+                        <div class="col">
+                            <input type="text" class="form-control" name="username" placeholder="Username" required >
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" name="client" placeholder="Client" >
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <input type="text" class="form-control" name="location" placeholder="Location" required >
+                        </div>
+                        <div class="col">
+                            <input type="number" class="form-control" name="phone" placeholder="Phone" required >
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <input type="text" class="form-control" name="account" placeholder="Acc No(phone)">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" name="profile" placeholder="Profile" required >
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <input type="number" class="form-control" name="billable" placeholder="Billable" required >
+                        </div>
+                        <div class="col">
+                            <input type="number" class="form-control" name="wallet" placeholder="Wallet" required >
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <label class="text-dark">is_router_ours</label>
+                            <select class="form-select" name="is_router_ours" aria-label="Default select example" required>
+                                
+                                <option selected value=1>Yes</option>
+                                <option value=0>No</option>
+                                
+                            </select>
+                        </div>
+                        <div class="col">
+                        <label class="text-dark">is_receiver_ours</label>
+                            <select class="form-select" name="is_receiver_ours" aria-label="Default select example" placeholder="is_receiver_ours" required>
+                                <option selected value=1>Yes</option>
+                                <option value=0>No</option>  
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group mt-3 hover">
+                        <input type="submit" class="btn form-control bg-primary" value="Submit">
+                    </div>
+                </form>
+           
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!--  end of modal -->
+    <%- include('./partials/footer.ejs')%>
+</body>
+</html>

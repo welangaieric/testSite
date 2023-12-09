@@ -1,0 +1,33 @@
+<div class="nav-head">
+    <div class="brand">
+        <h4>Konnekt Smartlife</h4>
+        <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+          <i class="bi bi-list" ></i>
+        </button>
+        
+    </div>
+    <div class="profile">
+        <div class="avatar">
+            <img src="/img/avatar.png" alt="">
+        </div>
+        <div class="profile-name">
+            <p><%=data.firstName+' '+data.lastName%></p>
+        </div>
+    </div>
+</div>  
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Konnekt Smartlife</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body ">
+    <ul>
+      <%- include('../nav/inbox.ejs')%>
+      <%- include('../nav/expiry.ejs')%>
+      <%- include('../nav/packages.ejs')%>
+      <%- include('../nav/purchases.ejs')%>
+      <%- include('../nav/help.ejs')%>
+      <%- include('../nav/logout.ejs')%>
+  </ul>
+  </div>
+</div>

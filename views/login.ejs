@@ -1,0 +1,41 @@
+<%- include('./partials/header.ejs')%>
+<body>
+    <div class="container-fluid full " >
+            <div class="welcome-banner">
+                    <div class="banner-head">
+                        <a href="/"><i class="bi bi-box-arrow-left"></i></a>
+                        <h2>WELCOME BACK !</h2>
+                    </div>
+                    <div class="banner-body">
+                    </div>
+            </div>
+            <div class="login">
+                <form action="/api/login/" class="login-form" method="post">
+                    <%if(typeof error != 'undefined'){ %>
+                        <div class="alert alert-danger alert-dismissible fade show " id="login_error" role="alert">
+                            <%= error%>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                      <% } %>
+                    <div class="alert alert-danger alert-dismissible fade " id="login_error" role="alert">
+                        Please fill all the fields
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div>
+                    <div class="form-group">
+                        <p>Employee ID</p>
+                        <input type="text" id="email" name="id" class="form-contrl"  placeholder="Employee ID">
+                    </div>
+                    <div class="form-group">
+                        <p>Password</p>
+                        <input type="password" id="password" name="password" class="form-contrl"  placeholder="Password">
+                    </div>
+                    <a href="">Forgot password?</a>
+                    <div class="form-group">
+                        <input type="submit" id="login" class="subBtn" value="Login">
+                    </div>
+                </form>
+            </div> 
+    </div>  
+    <%- include('./partials/footer.ejs')  %> 
+</body>
+</html>
